@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Maman Solo — WoMA · Maison de la Fertilité</title>
+<meta name="description" content="Vous souhaitez devenir maman solo ? WoMA vous accompagne pas à pas dans votre parcours PMA en Espagne : FIV ou insémination avec don de sperme, coordination médicale et soutien bienveillant. 1er RDV gratuit." />
+<meta property="og:title" content="Maman Solo — WoMA · Maison de la Fertilité" />
+<meta property="og:description" content="Vous souhaitez devenir maman solo ? WoMA vous accompagne pas à pas dans votre parcours PMA en Espagne. 1er RDV gratuit." />
+<meta property="og:type" content="website" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+<style>
+:root {
+--navy:    #073763;
+--yellow:  #ffeb7f;
+--blue:    #519bbe;
+--hero-bg: #ECF3FE;
+--white:   #ffffff;
+--offwhite:#f7f4f0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Open Sans', sans-serif; color: var(--navy); background: var(--white); overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 60px;
+  background: rgba(255,255,255,0.94); backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(7,55,99,0.08);
+}
+.nav-logo { font-family:'Poppins',sans-serif; font-weight:800; font-size:1.3rem; letter-spacing:.03em; color:var(--navy); }
+.nav-logo span { color: var(--blue); }
+.btn-rdv {
+  display:inline-block; background:var(--yellow); color:var(--navy);
+  font-family:'Poppins',sans-serif; font-weight:700; font-size:.88rem;
+  padding:12px 28px; border-radius:50px; text-decoration:none; letter-spacing:.02em;
+  box-shadow:0 3px 14px rgba(255,235,127,.45); transition:transform .2s,box-shadow .2s;
+}
+.btn-rdv:hover { transform:translateY(-2px); box-shadow:0 6px 22px rgba(255,235,127,.55); }
+
+/* HERO */
+.hero { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; padding-top:72px; }
+.hero-left {
+  background:var(--hero-bg); display:flex; flex-direction:column; justify-content:center;
+  padding:80px 64px 80px 60px;
+}
+.hero-left h1 {
+  font-family:'Lora',Georgia,serif; font-size:50px; font-weight:700; line-height:1.12;
+  color:var(--navy); margin-bottom:24px; animation:fadeUp .65s ease both;
+}
+.hero-sub {
+  font-family:'Poppins',sans-serif; font-size:16px; line-height:1.8; color:var(--navy);
+  max-width:460px; margin-bottom:40px; animation:fadeUp .65s .15s ease both;
+}
+.hero-cta { animation:fadeUp .65s .3s ease both; }
+.hero-right { position:relative; overflow:hidden; background:#d2e3f0; }
+.hero-right img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.img-placeholder {
+  width:100%; height:100%; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:12px;
+  background:linear-gradient(135deg,#ddeaf5,#c5d9ea);
+}
+.img-placeholder .ph-icon {
+  width:72px; height:72px; border-radius:50%;
+  background:rgba(81,155,190,.2); display:flex; align-items:center; justify-content:center; font-size:1.8rem;
+}
+.img-placeholder .ph-label {
+  font-family:'Poppins',sans-serif; font-size:.75rem; font-weight:600;
+  text-transform:uppercase; letter-spacing:.1em; color:var(--blue); opacity:.7;
+}
+
+/* SECTIONS */
+section { padding:100px 60px; }
+.s-label { font-family:'Poppins',sans-serif; font-weight:600; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--blue); margin-bottom:12px; }
+.s-title { font-family:'Poppins',sans-serif; font-size:clamp(1.7rem,2.6vw,2.4rem); font-weight:700; line-height:1.22; color:var(--navy); margin-bottom:18px; }
+.s-title em { font-style:normal; color:var(--blue); }
+.s-body { font-size:1rem; line-height:1.8; color:rgba(7,55,99,.72); max-width:540px; }
+
+/* POUR QUI */
+.forwho { background:var(--offwhite); display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.cards { display:flex; flex-direction:column; gap:16px; }
+.card {
+  background:var(--white); border-radius:16px; padding:22px 26px;
+  display:flex; align-items:flex-start; gap:15px;
+  border-left:4px solid var(--blue); box-shadow:0 2px 14px rgba(7,55,99,.06);
+  transition:transform .22s,box-shadow .22s;
+}
+.card:hover { transform:translateX(5px); box-shadow:0 5px 22px rgba(7,55,99,.1); }
+.card-icon { font-size:1.45rem; flex-shrink:0; margin-top:1px; }
+.card h4 { font-size:.95rem; font-weight:700; margin-bottom:4px; color:var(--navy); }
+.card p  { font-size:.87rem; line-height:1.65; color:rgba(7,55,99,.7); }
+
+/* PROCESS */
+.process { background:var(--white); }
+.process-inner { max-width:860px; margin:0 auto; text-align:center; }
+.steps { display:grid; grid-template-columns:repeat(3,1fr); gap:36px; margin-top:56px; position:relative; }
+.steps::before {
+  content:''; position:absolute; top:31px; left:16.5%; right:16.5%; height:2px;
+  background:linear-gradient(to right,var(--blue),var(--yellow)); z-index:0;
+}
+.step { position:relative; z-index:1; }
+.step-num {
+  width:62px; height:62px; border-radius:50%;
+  font-family:'Poppins',sans-serif; font-weight:700; font-size:1.2rem;
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 18px; box-shadow:0 4px 18px rgba(7,55,99,.2);
+}
+.step:nth-child(1) .step-num { background:var(--navy); color:var(--white); }
+.step:nth-child(2) .step-num { background:var(--blue); color:var(--white); }
+.step:nth-child(3) .step-num { background:var(--yellow); color:var(--navy); }
+.step h4 { font-size:.95rem; font-weight:700; margin-bottom:8px; color:var(--navy); }
+.step p  { font-size:.85rem; line-height:1.65; color:rgba(7,55,99,.65); }
+.step-note { font-size:.75rem; font-style:italic; color:rgba(7,55,99,.42); margin-top:6px; }
+
+/* PHOTO BANDE */
+.photo-band { display:grid; grid-template-columns:repeat(3,1fr); height:300px; }
+.photo-slot {
+  background:linear-gradient(135deg,#daeaf5,#c3d8e8);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+  border-right:2px solid var(--white);
+}
+.photo-slot:last-child { border-right:none; }
+.photo-slot img { width:100%; height:100%; object-fit:cover; display:block; }
+.photo-slot .ph-icon { width:56px; height:56px; font-size:1.4rem; background:rgba(81,155,190,.2); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.photo-slot .ph-label { font-family:'Poppins',sans-serif; font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:.1em; color:var(--blue); opacity:.7; }
+
+/* OFFRES */
+.offers { background:var(--hero-bg); }
+.offers-card { margin-top:48px; background:var(--white); border-radius:20px; overflow:hidden; box-shadow:0 6px 36px rgba(7,55,99,.1); }
+.offers-layout { display:grid; grid-template-columns:280px 1fr; }
+.offers-left { background:var(--hero-bg); padding:40px 32px; display:flex; flex-direction:column; gap:16px; }
+.offer-tag { font-family:'Poppins',sans-serif; font-weight:600; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--navy); margin-bottom:4px; }
+.offer-price { font-family:'Poppins',sans-serif; font-weight:800; font-size:2.6rem; color:var(--navy); line-height:1; }
+.offer-badge { display:inline-block; background:var(--yellow); color:var(--navy); font-family:'Poppins',sans-serif; font-weight:700; font-size:.8rem; padding:7px 18px; border-radius:50px; width:fit-content; }
+.offer-desc { font-size:.88rem; line-height:1.6; color:rgba(7,55,99,.7); }
+.offers-right { padding:40px 40px 40px 48px; }
+.offers-right .s-label { margin-bottom:20px; }
+.offers-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.offer-feature h4 { display:flex; align-items:center; gap:10px; font-size:1rem; font-weight:700; margin-bottom:6px; color:var(--navy); }
+.offer-feature h4 .check { width:26px; height:26px; border-radius:50%; background:var(--yellow); color:var(--navy); display:flex; align-items:center; justify-content:center; font-size:.75rem; font-weight:800; flex-shrink:0; }
+.offer-feature p { font-size:.85rem; line-height:1.6; color:rgba(7,55,99,.65); padding-left:36px; }
+
+/* TÉMOIGNAGE */
+.testimonial { background:var(--blue); text-align:center; padding:80px 60px; }
+.testimonial blockquote { font-family:'Lora',Georgia,serif; font-size:clamp(1.05rem,1.7vw,1.45rem); font-style:italic; font-weight:400; line-height:1.75; color:var(--white); max-width:800px; margin:0 auto 28px; }
+.testimonial cite { font-family:'Open Sans',sans-serif; font-size:.88rem; color:rgba(255,255,255,.65); font-style:normal; display:block; }
+
+/* FAQ */
+.faq { background:var(--white); }
+.faq-inner { max-width:700px; margin:0 auto; }
+.faq-item { border-bottom:1px solid rgba(7,55,99,.1); padding:22px 0; }
+.faq-q { font-family:'Poppins',sans-serif; font-size:.97rem; font-weight:600; color:var(--navy); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.faq-q::after { content:'+'; font-size:1.4rem; color:var(--blue); flex-shrink:0; transition:transform .2s; }
+.faq-item.open .faq-q::after { transform:rotate(45deg); }
+.faq-a { font-size:.91rem; line-height:1.75; color:rgba(7,55,99,.68); max-height:0; overflow:hidden; transition:max-height .35s ease,padding .3s; }
+.faq-item.open .faq-a { max-height:300px; padding-top:14px; }
+
+/* FOOTER */
+footer { background:#f2ede8; padding:52px 60px 40px; display:flex; flex-direction:column; align-items:center; gap:20px; }
+.footer-logo { font-family:'Poppins',sans-serif; font-weight:900; font-size:3rem; color:var(--navy); letter-spacing:.02em; line-height:1; }
+.footer-rdv { display:inline-block; background:var(--yellow); color:var(--navy); font-family:'Poppins',sans-serif; font-weight:700; font-size:.95rem; padding:14px 38px; border-radius:50px; text-decoration:none; transition:transform .2s; }
+.footer-rdv:hover { transform:translateY(-2px); }
+.footer-contact { font-family:'Open Sans',sans-serif; font-size:.92rem; color:var(--navy); }
+.footer-contact a { color:var(--navy); font-weight:700; text-decoration:none; }
+.footer-socials { display:flex; gap:12px; align-items:center; }
+.footer-socials a { width:40px; height:40px; border-radius:50%; border:1.5px solid rgba(7,55,99,.22); display:flex; align-items:center; justify-content:center; text-decoration:none; transition:border-color .2s,background .2s; }
+.footer-socials a:hover { border-color:var(--navy); background:rgba(7,55,99,.06); }
+.footer-socials svg { width:17px; height:17px; fill:var(--navy); }
+.footer-copy { font-size:.75rem; color:rgba(7,55,99,.4); text-align:center; padding-top:8px; border-top:1px solid rgba(7,55,99,.1); width:100%; }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+.reveal { opacity:0; transform:translateY(20px); transition:opacity .55s ease,transform .55s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:16px 24px;}
+  section{padding:70px 24px;}
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-left{padding:100px 28px 56px;}
+  .hero-left h1{font-size:36px;}
+  .hero-right{height:260px;}
+  .forwho{grid-template-columns:1fr;gap:36px;}
+  .steps{grid-template-columns:1fr;gap:32px;}
+  .steps::before{display:none;}
+  .photo-band{grid-template-columns:1fr;height:auto;}
+  .photo-slot{height:180px;border-right:none;border-bottom:2px solid var(--white);}
+  .offers-layout{grid-template-columns:1fr;}
+  .offers-grid{grid-template-columns:1fr;}
+  footer{padding:40px 24px 32px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Wo<span>MA</span></div>
+  <a href="https://www.woma.health/questionnaire-woma" target="_blank" class="btn-rdv">1er RDV gratuit →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <h1>Vous n'êtes&nbsp;pas&nbsp;seule</h1>
+    <p class="hero-sub">
+      Vous avez pris votre décision de mener un parcours de Maman Sola — ou vous y pensez sérieusement. WoMA vous accompagne pas à pas, de la première question jusqu'à la réalisation de votre projet, avec la bienveillance et l'expertise que vous méritez.
+    </p>
+    <div class="hero-cta">
+      <a href="https://www.woma.health/questionnaire-woma" target="_blank" class="btn-rdv">1er RDV gratuit</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- Remplacer par : <img src="votre-photo.jpg" alt="Maman Solo WoMA" /> -->
+    <div class="img-placeholder">
+      <div class="ph-icon">📷</div>
+      <p class="ph-label">Photo principale — à remplacer</p>
+    </div>
+  </div>
+</section>
+
+<!-- POUR QUI -->
+<section class="forwho">
+  <div>
+    <p class="s-label">Pour qui ?</p>
+    <h2 class="s-title">Ce service est fait pour vous <em>si…</em></h2>
+    <p class="s-body">
+      Vous avancez seule dans ce projet — et c'est précisément votre force. WoMA est là pour que vous ne manquiez jamais d'informations, de soutien ou d'expertise médicale.
+    </p>
+  </div>
+  <div class="cards">
+    <div class="card reveal">
+      <div class="card-icon">🌱</div>
+      <div>
+        <h4>Vous y pensez depuis un moment</h4>
+        <p>Vous avez besoin d'un espace sécurisé pour poser vos questions, sans pression ni jugement.</p>
+      </div>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📋</div>
+      <div>
+        <h4>Vous êtes prête à passer à l'action</h4>
+        <p>Vous voulez comprendre le parcours médical concret — FIV ou insémination avec don de sperme, déroulement, délais, coûts.</p>
+      </div>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🤝</div>
+      <div>
+        <h4>Vous voulez un accompagnement humain</h4>
+        <p>Pas seulement un dossier médical — une coordinatrice à vos côtés, de A à Z, qui parle votre langue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT ÇA MARCHE -->
+<section class="process">
+  <div class="process-inner">
+    <p class="s-label" style="text-align:center">Comment ça marche</p>
+    <h2 class="s-title" style="text-align:center;max-width:100%">Votre parcours en <em>3 étapes</em></h2>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h4>Appel découverte</h4>
+        <p>30 minutes gratuites pour faire connaissance, répondre à vos questions et évaluer ensemble votre projet.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h4>Coordination France</h4>
+        <p>Suivi avec un médecin référent en France, bilans et ordonnances avant le départ en Espagne.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h4>Insémination ou FIV en Espagne</h4>
+        <p>Prise en charge par notre clinique partenaire, avec votre coordinatrice WoMA présente à chaque étape.</p>
+        <p class="step-note">*Sauf si transfert différé pour une FIV</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO BANDE -->
+<div class="photo-band">
+  <div class="photo-slot">
+    <div class="ph-icon">📷</div>
+    <p class="ph-label">Photo ambiance 1</p>
+  </div>
+  <div class="photo-slot">
+    <div class="ph-icon">📷</div>
+    <p class="ph-label">Photo ambiance 2</p>
+  </div>
+  <div class="photo-slot">
+    <div class="ph-icon">📷</div>
+    <p class="ph-label">Photo ambiance 3</p>
+  </div>
+</div>
+
+<!-- NOS ACCOMPAGNEMENTS -->
+<section class="offers">
+  <p class="s-label">Nos accompagnements</p>
+  <h2 class="s-title">Avancez dans votre parcours de <em>Maman Sola</em> avec WoMA</h2>
+  <div class="offers-card reveal">
+    <div class="offers-layout">
+      <div class="offers-left">
+        <p class="offer-tag">Accompagnement Sérénité</p>
+        <div class="offer-price">770 €</div>
+        <div class="offer-badge">Jusqu'à 2 800 € remboursés</div>
+        <p class="offer-desc">Un accompagnement complet du premier rendez-vous et tout au long de votre parcours.</p>
+        <a href="https://www.woma.health/questionnaire-woma" target="_blank" class="btn-rdv" style="margin-top:8px">1er RDV gratuit</a>
+      </div>
+      <div class="offers-right">
+        <p class="s-label">Ce que vous obtenez</p>
+        <div class="offers-grid">
+          <div class="offer-feature">
+            <h4><span class="check">✓</span>Démarrage rapide</h4>
+            <p>Aucun délai d'attente. Votre rythme, votre tempo.</p>
+          </div>
+          <div class="offer-feature">
+            <h4><span class="check">✓</span>Reste à charge réduit</h4>
+            <p>Coût maîtrisé. Moins de charge mentale.</p>
+          </div>
+          <div class="offer-feature">
+            <h4><span class="check">✓</span>Expertise médicale</h4>
+            <p>Orientation vers des spécialistes reconnus en PMA. Votre parcours en toute confiance.</p>
+          </div>
+          <div class="offer-feature">
+            <h4><span class="check">✓</span>Guidée de A à Z</h4>
+            <p>Plateforme digitale de suivi et équipe disponible en continu. Vous n'êtes jamais seule.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGE -->
+<div class="testimonial">
+  <blockquote>
+    « Je n'ai pas rencontré la bonne personne. J'ai longtemps attendu. À 37 ans, j'ai décidé que mon projet d'enfant ne pouvait pas attendre indéfiniment. Aujourd'hui j'ai une fille de 2 ans. C'est la meilleure décision de ma vie. »
+  </blockquote>
+  <cite>— Élodie, 35 ans</cite>
+</div>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="faq-inner">
+    <p class="s-label" style="text-align:center">Questions fréquentes</p>
+    <h2 class="s-title" style="text-align:center;max-width:100%;margin-bottom:40px">On répond à vos <em>questions</em></h2>
+    <div class="faq-item">
+      <div class="faq-q">Pourquoi aller en Espagne plutôt qu'en France ?</div>
+      <div class="faq-a">En France, les délais d'attente pour un parcours maman solo peuvent dépasser 3 ans. Nos cliniques partenaires en Espagne permettent un démarrage rapide, dans un cadre légal et médical reconnu, avec des équipes francophones. Vous bénéficiez de la même qualité médicale, sans l'attente.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Est-ce que WoMA est une clinique ?</div>
+      <div class="faq-a">Non, WoMA est un service d'accompagnement indépendant. Nous ne sommes pas liés à une clinique et nous choisissons nos partenaires pour leur qualité médicale. Notre rôle est de vous guider, de coordonner votre parcours et d'être à vos côtés à chaque étape.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Combien coûte un protocole de FIV ou insémination en Espagne ?</div>
+      <div class="faq-a">Les coûts varient selon la clinique et votre situation médicale. Lors de l'appel découverte, nous vous donnons une fourchette précise et transparente, sans surprise. Certains frais peuvent être partiellement pris en charge par votre mutuelle — jusqu'à 2 800 € remboursés.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Quelle est la différence entre une FIV et une insémination avec don de sperme ?</div>
+      <div class="faq-a">L'insémination artificielle est un protocole plus simple et moins invasif, indiqué lorsque la fertilité de la future maman le permet. La FIV est recommandée en cas de difficultés supplémentaires ou après échec de l'insémination. Nous vous orientons vers la solution adaptée après bilan médical.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Comment se déroule le suivi médical en France ?</div>
+      <div class="faq-a">La coordination se fait à distance via notre interface patient (messagerie, checklist, calendrier de traitement). Les consultations médicales en France se déroulent en présentiel ou en téléconsultation. Pour la clinique en Espagne, un déplacement de 24h est nécessaire (sauf en cas de transfert différé pour une FIV).</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">WoMA</div>
+  <a href="https://www.woma.health/questionnaire-woma" target="_blank" class="footer-rdv">1er RDV gratuit</a>
+  <p class="footer-contact">Nous contacter :&nbsp;<a href="mailto:experts@woma.health">experts@woma.health</a></p>
+  <div class="footer-socials">
+    <a href="https://www.instagram.com/woma.health/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/company/woma-health/" target="_blank" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@womahealth" target="_blank" aria-label="TikTok">
+      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.28 8.28 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@WoMA.health" target="_blank" aria-label="YouTube">
+      <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+    </a>
+  </div>
+  <p class="footer-copy">© 2025 WoMA — Maison de la Fertilité. Tous droits réservés.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
